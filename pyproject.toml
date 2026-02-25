@@ -1,7 +1,7 @@
 [project]
-name = "gui"
+name = "SamanGuiApp"
 version = "0.1.0"
-description = "GUI App whit PySide6 for integrating all pages of the Saman Yazd Steel Complex"
+description = "GUI App with PySide6 for integrating all pages of the Saman Yazd Steel Complex"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
