@@ -1,0 +1,7 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="assets">
+        <file alias="Vazirmatn.ttf">../assets/Vazirmatn[wght].ttf</file>
+        <file alias="saman.png">../assets/saman.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,54 @@
+Table Employee {
+  id integer [primary key]
+  employee_code integer [unique]
+  fname varchar  [not null]
+  group_id integer [not null]
+  user_id integer [default: Null, unique]
+  Duty_id integer [not null, unique]
+}
+
+Table Group {
+  id integer [primary key]
+  name varchar  [not null]
+}
+
+Table Duty {
+  id integer [primary key]
+  title varchar  [not null]
+}
+
+Table User{
+  id integer [primary key]
+  name varchar  [not null]
+}
+
+Table Product{
+  id integer [primary key]
+  nosa_code varchar  [not null]
+  name varchar  [not null]
+  product_group_id integer [not null]
+  unit varchar  [not null]
+}
+
+Table CostCenter{
+  id integer [primary key]
+  nosa_code varchar  [not null]
+  name varchar  [not null]
+}
+
+Table NosaLog{
+  id integer [primary key]
+  ref_id varchar  [not null]
+  product_id integer  [not null]
+  qty integer  [not null]
+  cost_center_id integer
+  employee_code integer
+}
+
+Ref: Employee.user_id > User.id
+Ref: Employee.group_id > Group.id
+Ref: Employee.Duty_id > Duty.id
+
+Ref: NosaLog.product_id > Product.id
+Ref: NosaLog.cost_center_id > CostCenter.id
+Ref: NosaLog.employee_code > Employee.employee_code
