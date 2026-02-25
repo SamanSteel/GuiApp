@@ -23,6 +23,8 @@ def main():
         app.setFont(font)
     else:
         print("font NOT loading")
+
+        
     app.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
     app.setWindowIcon(QIcon(graphic_settings.LOGO_PATH))
     login_modal = LoginDialog()

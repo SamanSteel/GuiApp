@@ -1,6 +1,6 @@
 # Third Library
 from ldap3 import ALL, Connection, Server
-from ldap3.core.exceptions import LDAPBindError, LDAPCertificateError
+from ldap3.core.exceptions import LDAPBindError
 
 from config.server_config import ldap_settings
 
@@ -15,11 +15,3 @@ def authenticate(user: str, password: str):
     except LDAPBindError:
         return False
     return conn.extend.standard.who_am_i().split("\\")[-1]
-
-
-if __name__ == "__main__":
-    try:
-        if authenticate(ldap_settings.LDAP_USER, ldap_settings.LDAP_PASSWORD):
-            print("SUCCESS")
-    except LDAPCertificateError as e:
-        print(f"Authentication failed: {e.detail}")
